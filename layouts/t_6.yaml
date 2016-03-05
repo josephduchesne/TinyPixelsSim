@@ -1,0 +1,32 @@
+scale: 0.4
+boards:
+  - id: 0  # Front
+    type: 3x3
+    translate: {x: -25.3, y: 0, z: 0}
+    rotate: {r: 0, p: 0, y: 0}
+    texture: {u: 3, v: 3}
+  - id: 1  # Left
+    type: 3x3
+    translate: {x: -75.9, y: 0, z: 0}
+    rotate: {r: 0, p: 0, y: 0}
+    texture: {u: 0, v: 3}
+  - id: 2  # Right
+    type: 3x3
+    translate: {x: 25.3, y: 0, z: 0}
+    rotate: {r: 0, p: 0, y: 0}
+    texture: {u: 6, v: 3}
+  - id: 3  # Top
+    type: 3x3
+    translate: {x: -25.3, y: 50.6, z: 0}
+    rotate: {r: 0, p: 0, y: 0}
+    texture: {u: 0, v: 3}
+  - id: 4  # Bottom
+    type: 3x3
+    translate: {x: -25.3, y: -50.6, z: 0}
+    rotate: {r: 0, p: 0, y: 0}
+    texture: {u: 6, v: 3}
+  - id: 5  # Back
+    type: 3x3
+    translate: {x: 75.9, y: 0, z: 0}
+    rotate: {r: 0, p: 0, y: 0}
+    texture: {u: 9, v: 3}

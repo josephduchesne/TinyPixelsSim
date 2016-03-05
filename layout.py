@@ -18,6 +18,10 @@ class Layout(object):
 		for board in self.config['boards']:
 			self.boards[board['id']] = Board(board['type'], board['id'])
 
+	def update(self, time_offset):
+		for board in self.config['boards']:
+			self.boards[board['id']].update(time_offset)
+
 	def render(self):
 		for board in self.config['boards']:
 			glPushMatrix()

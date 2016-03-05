@@ -4,6 +4,7 @@ import yaml
 
 from renderer import Renderer
 from OpenGL.GL import *
+import colorsys
 
 class Board(object):
 
@@ -18,10 +19,14 @@ class Board(object):
 		self.front = Renderer.load_image("boards/"+self.config['front'])[0]
 		self.back = Renderer.load_image("boards/"+self.config['back'])[0]
 
+
+
+	def update(self, time_offset):
 		self.colors = {}
 		for i, led in enumerate(self.config['leds']):
-			percent = 1.0*i/len(self.config['leds'])
-			self.colors[led['id']] = {"r": percent, "g":0, "b": 1.0 - percent}
+			percent = ( i*1.0/len(self.config['leds']) - time_offset/4.0 ) % 1.0
+			rgb = colorsys.hsv_to_rgb(percent, 1.0, 1.0)
+			self.colors[led['id']] = {"r": rgb[0], "g": rgb[1], "b": rgb[2]}
 
 	def render(self):
 

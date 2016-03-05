@@ -20,6 +20,8 @@ layout, scale = load_layout(layout_offset, layouts)
 
 pitch = yaw = 0.0
 
+clock = pygame.time.Clock()
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -48,7 +50,8 @@ while True:
 
     Renderer.camera(pitch, yaw, scale)
 
+    layout.update(pygame.time.get_ticks()/1000.0)
     layout.render()
 
     pygame.display.flip()
-    pygame.time.wait(50)
+    clock.tick(60)

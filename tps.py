@@ -7,11 +7,13 @@ from layout import Layout
 from renderer import Renderer
 
 pygame.init()
-pygame.display.set_mode((1000,1000), DOUBLEBUF|OPENGL)
+pygame.display.set_caption("TinyPixelsSim")
+pygame.display.set_icon(pygame.image.load('boards/3x3_f.png'))
+pygame.display.set_mode((1024, 1024), DOUBLEBUF|OPENGL)
 
 layouts = ['grid_4', 'cube_6', 't_6']
 layout_offset = 0
-
+ 
 def load_layout(offset, layouts):
 	layout = Layout(layouts[layout_offset % len(layouts)])
 	scale = layout.config['scale']
